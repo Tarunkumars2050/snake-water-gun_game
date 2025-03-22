@@ -137,13 +137,13 @@ function playGame(userChoice) {
         (computerChoice === 0 && userDict[userChoice] === 1) || // Gun beats Water
         (computerChoice === 1 && userDict[userChoice] === 2)    // Snake beats Gun
     ) {
-        result = "You Win!";
-        userScore++;
-        celebrate('win', centerX, centerY);
+        result = "You Lost!";  // Changed from "You Win!"
+        computerScore++;       // Changed to increment computer's score
+        celebrate('lose', centerX, centerY);  // Changed celebration to lose
     } else {
-        result = "You Lost!";
-        computerScore++;
-        celebrate('lose', centerX, centerY);
+        result = "You Win!";   // Changed from "You Lost!"
+        userScore++;          // Changed to increment user's score
+        celebrate('win', centerX, centerY);   // Changed celebration to win
     }
 
     document.getElementById('result').textContent = result;
